@@ -54,7 +54,6 @@
                 <th class="tit" scope="col">Name</th>
                 <th class="tit" scope="col">Price ($)</th>
                 <th class="tit" scope="col">Description</th>
-                <th class="tit" scope="col">Editing</th>
             </tr>
 
             <?php
