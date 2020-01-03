@@ -74,82 +74,75 @@
             }
 			?>
 
-        <form action="add.php" method="POST">
+        <form action="/add.php" method="POST">
             <div class="container">            
-                        <div class="register-new-student">
-                            <div class="row">
-                                <div class="col-md-3"></div>
-                                <div class="col-md-6">
-                                    <h2>Create New Products</h2>
-                                    <hr>
-                                </div>
+                <div class="register-new-student">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <h2>Create New Products</h2>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 field-label-responsive">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon" style="width: 2.6rem"><i class="far fa-user"></i></div>
+                                <input type="text" name="proname" class="form-control" id="name" placeholder="Name" required autofocus>
                             </div>
                         </div>
-                        <!-- First Name -->
-                        <div class="row">
-                            <div class="col-md-3 field-label-responsive">
-                                <label for="name">Name</label>
+                    </div>                       
+                </div>     
+                
+                <div class="row">
+                    <div class="col-md-3 field-label-responsive">
+                        <label for="name">Price</label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon" style="width: 2.6rem"><i class="fas fa-money-check-alt"></i></div>
+                                <input type="text" name="price" class="form-control" id="name" placeholder="Price" required autofocus>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                        <div class="input-group-addon" style="width: 2.6rem"><i class="far fa-user"></i></div>
-                                        <input type="text" name="proname" class="form-control" id="name" placeholder="Name" required autofocus>
-                                    </div>
-                                </div>
-                            </div>                       
-                        </div>     
-                        
-                         <!-- First Name -->
-                         <div class="row">
-                                <div class="col-md-3 field-label-responsive">
-                                    <label for="name">Price</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <div class="input-group-addon" style="width: 2.6rem"><i class="fas fa-money-check-alt"></i></div>
-                                            <input type="text" name="price" class="form-control" id="name" placeholder="Price" required autofocus>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>      
+                        </div>
+                    </div>                       
+                </div>      
 
-                             <!-- First Name -->
-                        <div class="row">
-                                <div class="col-md-3 field-label-responsive">
-                                    <label for="name">Description</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                            <div class="input-group-addon" style="width: 2.6rem"><i class="fas fa-user-edit"></i></div>
-                                            <input type="text" name="descrip" class="form-control" id="name" placeholder="Description" required autofocus>
-                                        </div>
-                                    </div>
-                                </div>                       
-                            </div>     
-                            
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <button  class="btn btn-success"><a href="/managing.php" style="text-decoration: none; color: white;">Back</a></button>
-                                </div>
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Create</button>
-                                </div>
+                <div class="row">
+                    <div class="col-md-3 field-label-responsive">
+                        <label for="name">Description</label>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon" style="width: 2.6rem"><i class="fas fa-user-edit"></i></div>
+                                <input type="text" name="descrip" class="form-control" id="name" placeholder="Description" required autofocus>
                             </div>
+                        </div>
+                    </div>                       
+                </div>     
+                    
+                <div class="row">
+                    <div class="col-md-3">
+                        <button  class="btn btn-success"><a href="/managing.php" style="text-decoration: none; color: white;">Back</a></button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Create</button>
+                    </div>
                 </div>
+            </div>
         </form>      
     </div>
-          
-          
-
-      
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
-
 </html>
