@@ -96,7 +96,7 @@
                                     <button  class="btn btn-success"><a href="/managing.php" style="text-decoration: none; color: white;">Back</a></button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="submit"   value="Add" class="btn btn-success"><i class="fa fa-user-plus"></i> Create</button>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Create</button>
                                 </div>
                             </div>
                         
