@@ -1,3 +1,26 @@
+<?php 
+require_once './connect.php';  
+if(isset($_POST["aduser"]) && isset($_POST["adpass"]))
+{
+	$user = $_POST["aduser"];
+	$pass = $_POST["adpass"];
+	$sql ="SELECT * FROM account WHERE username = '$user' AND pwd= '$pass'";
+	$rows = pg_query($sql);
+	if(pg_num_rows($rows)==1) { ?>
+		<script>
+            alert("Login successfully!!");
+        </script>
+    <?php
+    } else { 
+        ?>
+            <script>
+                alert("Wrong Username/Password");
+                window.location.href = "/index.php";
+            </script>
+        <?php }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,6 +77,7 @@
                 <th class="tit" scope="col">Name</th>
                 <th class="tit" scope="col">Price ($)</th>
                 <th class="tit" scope="col">Description</th>
+                <th class="tit" scope="col">Edit</th>
             </tr>
 
             <?php
@@ -68,6 +92,10 @@
                     <td class="info"><?php echo $row['price']?></td> 
                     <td class="info"><?php echo $row['descrip']?></td> 
                     <td class="info">
+                        <form action='/delete.php' method="POST" onsubmit="return confirmDelete();">
+                            <input type='hidden' name='productid' value='<?php echo $row['productid']?>'>
+                            <input class="edit-btn" type='submit' value='Delete'>
+                        </form>
                     </td>
                 </tr>
             <?php
