@@ -43,7 +43,7 @@
                     {
                         ?>
                         <script>
-                            alert("Please input product information!!");
+                            alert("Product information should not be blank!!");
                         </script>
                         <?php
                     }
@@ -65,19 +65,17 @@
                             pg_query($conn,$sql);
                             ?> 
                                 <script>
-                                    alert("Added into Database successful!!");
+                                    alert("Added successful!");
                                     window.location.href = "/managing.php";
                                 </script>
                             <?php
                         }
                     }
             }
-            ?>
+			?>
 
         <form action="add.php" method="POST">
-            <div class="container">
-                    <form class="form-horizontal" action="/admin/add/student" method="POST">
-            
+            <div class="container">            
                         <div class="register-new-student">
                             <div class="row">
                                 <div class="col-md-3"></div>
@@ -140,9 +138,7 @@
                                     <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Create</button>
                                 </div>
                             </div>
-                        
-                    </form>
-            </div>
+                </div>
         </form>      
     </div>
           
