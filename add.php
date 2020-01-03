@@ -32,6 +32,47 @@
               </nav>
 
     <div class="body">
+    <?php 
+        require("connect.php");   
+        if(isset($_POST["submit"]))
+            {
+                $name = $_POST["proname"];
+                $price = $_POST["price"];
+                $descrip = $_POST["descrip"];
+                if ($name == ""||$price == ""|| $descrip == "") 
+                    {
+                        ?>
+                        <script>
+                            alert("Please input product information!!");
+                        </script>
+                        <?php
+                    }
+                else
+                    {
+                        $sql = "select * from product where proname='$name'";
+                        $query = pg_query($conn, $sql);
+                        if(pg_num_rows($query)>0)
+                        {
+                        ?> 
+                            <script>
+                                alert("The product is available!!");
+                            </script>
+                        <?php
+                        }
+                        else
+                        {
+                            $sql = "INSERT INTO product(proname, price, descrip) VALUES ('$name','$price','$descrip')";
+                            pg_query($conn,$sql);
+                            ?> 
+                                <script>
+                                    alert("Added into Database successful!!");
+                                    window.location.href = "/managing.php";
+                                </script>
+                            <?php
+                        }
+                    }
+            }
+            ?>
 
         <form action="add.php" method="POST">
             <div class="container">
@@ -102,55 +143,7 @@
                         
                     </form>
             </div>
-        </form>
-
-
-
-
-    <?php 
-        require("connect.php");   
-        if(isset($_POST["submit"]))
-            {
-                $name = $_POST["proname"];
-                $price = $_POST["price"];
-                $descrip = $_POST["descrip"];
-                if ($name == ""||$price == ""|| $descrip == "") 
-                    {
-                        ?>
-                        <script>
-                            alert("Please input product information!!");
-                        </script>
-                        <?php
-                    }
-                else
-                    {
-                        $sql = "select * from product where proname='$name'";
-                        $query = pg_query($conn, $sql);
-                        if(pg_num_rows($query)>0)
-                        {
-                        ?> 
-                            <script>
-                                alert("The product is available!!");
-                            </script>
-                        <?php
-                        }
-                        else
-                        {
-                            $sql = "INSERT INTO product(proname, price, descrip) VALUES ('$name','$price','$descrip')";
-                            pg_query($conn,$sql);
-                            ?> 
-                                <script>
-                                    alert("Added into Database successful!!");
-                                    window.location.href = "/managing.php";
-                                </script>
-                            <?php
-                        }
-                    }
-            }
-            ?>
-            
-
-           
+        </form>      
     </div>
           
           
